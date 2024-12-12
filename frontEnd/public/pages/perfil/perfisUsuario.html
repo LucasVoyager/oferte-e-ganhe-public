@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Perfis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/aside.css">
+    <link rel="stylesheet" href="../../styles/header.css">
+    <link rel="stylesheet" href="../../styles/button.css">
+    <link rel="stylesheet" href="../../styles/tabela.css">
+    <link rel="stylesheet" href="../../styles/filtro.css">
+</head>
+<body>
+    <header>
+        <div class="hamburguer" onclick="toggleSidebar()">☰</div>
+        <div id="logo" class="header-logo">
+            <img src="./images/logo.png" alt="Logo">
+        </div>
+        <div class="user-profile">
+            <div class="user-info">
+                <h4 id="username" class="name"></h4>
+                <h4 id="profile-name" class="role"></h4>
+            </div>
+            <button class="header-button" onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <div id="mensagem" class="mensagem"></div>
+    <div class="container">
+        <aside class="aside">
+            <ul class="aside__menu">
+                <li class="aside__menu-item"><a href="http://localhost:3000/indexAdmin" id="dashboardAs">Dashboard</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/usuarios" id="perfisEusuarioAs">Gestão de Perfis e Usuários</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/envioTaloes" id="envioAs">Gestão de Envio de Talões</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/recebimentoTaloes" id="recebimentoAs">Gestão do Recebimento</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/estoqueTaloes" id="estoqueAs">Gestão do Estoque</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/manutencaoTaloes" id="manutencaoAs">Gestão da Manutenção</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/lojas" id="lojaAs">Gestão de Lojas</a></li>
+            </ul>
+        </aside>
+        <div class="main-content">
+            <div class="container-table">
+                <h2>Gestão de Perfis</h2>
+                <div class="filter-container">
+                    <input type="text" id="idPerfil" placeholder="ID do perfil">
+                    <input type="number" id="intervaloMin" placeholder="Mínimo" min="1" max="10">
+                    <input type="number" id="intervaloMax" placeholder="Máximo" min="1" max="10">
+                    <button onclick="aplicarFiltro()">Filtrar</button>
+                </div>
+                <table id="tabelaPerfis" border="1" cellpadding="5" cellspacing="0" class="table-scroll">
+                    <thead>
+                        <tr>
+                            <th>ID Perfil</th>
+                            <th>Perfil</th>
+                            <th>Permissoes</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>    
+                </table>
+                <table id="explicacaoPermissoes" border="1" cellpadding="5" cellspacing="0" style="margin-top: 12px;">
+                    <thead>
+                        <tr>
+                            <th>Nome Permissao</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Nome Permissao">ADMIN</td>
+                            <td data-label="Descrição">Acesso total ao sistema.(apenas admin pode acessar os modulos: 
+                                "Gestão de Perfis e Usuários", "Gestão da Manutenção", "Gestão de Lojas")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome Permissao">SOLICITACOES</td>
+                            <td data-label="Descrição">Permissao para solicitar talao. (acesso ao modulo de "Gestão de Envio de Talões")</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome Permissao">ATUALIZAR</td>
+                            <td data-label="Descrição">Permissao para atualizar campos referentes a recebimento de taloes,
+                                 estoque. (acesso aos modulos de "Gestão do Recebimento" e "Gestão do Estoque")</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome Permissao">CONSULTAS</td>
+                            <td data-label="Descrição">Permissao para consultar tabelas dos seguintes modulos: 
+                                ("Gestão de Envio de Talões","Gestão do Recebimento","Gestão do Estoque")</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome Permissao">RELATORIOS</td>
+                            <td data-label="Descrição">Permissao para gerar relatorios dos seguintes modulos: 
+                                ("Gestão de Envio de Talões","Gestão do Recebimento","Gestão do Estoque")</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome Permissao">CRIACAO</td>
+                            <td data-label="Descrição">Permissao para criar talao: 
+                                ("Gestão de Envio de Talões") obs: tera visualização de todas as lojas, sugerido a
+                                pessoas da matriz.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome Permissao">EDICAO</td>
+                            <td data-label="Descrição">Permissao para editar um talao: 
+                                ("Gestão da Manutenção", "Gestão de Envio de Talões") obs: tera visualização de todas as lojas, sugerido a
+                            pessoas da matriz.</td>
+                        </tr>
+
+                    </tbody>    
+                </table>
+                <div class="buttons-container">
+                    <button onclick="window.location.href='/usuarios'">Lista de Usuarios</button>
+                    <button onclick="window.location.href='/cadastrarPerfil'">Criar Novo Perfil</button>
+                    <button onclick="pegarCSV()">Exportar Tabela</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script src="../../js/perfil/perfil.js"></script>
+</body>
+</html>

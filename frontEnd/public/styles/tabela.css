@@ -1,0 +1,148 @@
+/* estilos das tabelas globais */
+
+.table-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+    border: none; /* Remover bordas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd; /* Bordas leves */
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Estilização dos botões */
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    color: white;
+    background-color: #008D53;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.edit-btn {
+    background-color: #28a745;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    /* Estilo da tabela com rolagem */
+    .table-scroll {
+        max-height: 400px;
+        overflow-y: auto;
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilo da tabela */
+    table {
+        width: 400px;
+        max-width: 100%;
+        border-collapse: collapse;
+    }
+
+    /* Remover o cabeçalho da tabela */
+    thead {
+        display: none;
+    }
+
+    /* Estilo das linhas */
+    tr {
+        display: block; /* Torna as linhas blocos */
+        max-width: 100%;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    tr:hover {
+        background-color: #f4f4f4;
+    }
+
+    /* Estilo das células */
+    td {
+        display: flex; /* Torna cada célula um contêiner flexível */
+        flex-wrap: wrap; /* Permite quebra de linha dentro das células */
+        justify-content: space-between; /* Espaço entre o título e o valor */
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        margin: 5px 0;
+        width: 320px;
+        max-width: 100%;
+        padding: 12px;
+        box-sizing: border-box; /* Inclui padding e border no tamanho */
+        word-wrap: break-word; /* Quebra automaticamente as palavras longas */
+        white-space: normal; /* Permite quebra de linha no conteúdo */
+    }
+
+    /* Títulos de coluna dentro das células */
+    td::before {
+        content: attr(data-label); /* Pega o nome da coluna */
+        font-weight: bold;
+        color: #333;
+        margin-right: 10px; /* Espaço entre o título e o conteúdo */
+        flex-shrink: 0; /* Impede que o título encolha */
+    }
+
+    /* Estilo do conteúdo de dados */
+    td span {
+        font-size: 14px;
+        color: #555;
+        text-align: right; /* Mantém o texto alinhado à direita */
+    }
+}

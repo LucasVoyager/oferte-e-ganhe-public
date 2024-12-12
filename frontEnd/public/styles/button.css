@@ -1,0 +1,21 @@
+/* estilo botao global */
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    color: white;
+    background-color: #008D53;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #008D53;
+}

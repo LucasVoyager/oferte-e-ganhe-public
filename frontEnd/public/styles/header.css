@@ -1,0 +1,84 @@
+/* estilo global header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Altura fixa */
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* Fundo branco */
+    border-bottom: 1px solid #ddd;
+    padding: 0 20px; /* Espaçamento interno */
+}
+
+.header-logo { 
+    display: flex; 
+    align-items: center; 
+} 
+
+.header-logo img {
+    width: 150px; 
+    height: auto; 
+}
+
+.user-profile { 
+    display: flex; 
+    align-items: center;
+    margin-right: 10px; 
+} 
+.user-profile img { 
+    border-radius: 50%;
+    margin-right: 10px; 
+} 
+.user-profile .user-info { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* Centralizar nome e cargo */ 
+    margin-right: 10px; /* Espaço à direita */ } 
+.user-profile .user-info .name, 
+.user-profile .user-info .role { 
+    margin-bottom: 2px; /* Reduzir espaço entre nome e cargo */ 
+    text-align: center; /* Centralizar texto */ 
+    font-weight: bold; font-size: 14px; 
+} 
+.user-profile .user-info .role { 
+    font-size: 12px; color: #888; margin: 0; /* Remover margem inferior */ }
+
+/* menu-hamburguer */
+.hamburguer {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+@media (max-width: 768px) {
+    .hamburguer { 
+        display: block; 
+    } 
+    header { 
+        height: auto; 
+        padding: 10px;
+    } 
+        
+    .header-logo img { 
+        width: 120px; /* Ajustar tamanho do logo para telas menores */ 
+    } 
+    
+    .user-profile { 
+        margin-right: 0; 
+        margin-top: 10px; 
+    } 
+    
+    .user-profile .user-info { 
+        align-items: flex-start; /* Alinhar texto à esquerda */ 
+    } 
+    
+    .user-profile .user-info .name, 
+    .user-profile .user-info .role { 
+        text-align: left; /* Alinhar texto à esquerda */ 
+    }
+}

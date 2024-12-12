@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Usuários</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/aside.css">
+    <link rel="stylesheet" href="../../styles/header.css">
+    <link rel="stylesheet" href="../../styles/button.css">
+    <link rel="stylesheet" href="../../styles/tabela.css">
+    <link rel="stylesheet" href="../../styles/filtro.css">
+</head>
+<body>
+    <header>
+        <div class="hamburguer" onclick="toggleSidebar()">☰</div>
+        <div id="logo" class="header-logo">
+            <img src="./images/logo.png" alt="Logo">
+        </div>
+        <div class="user-profile">
+            <div class="user-info">
+                <h4 id="username" class="name"></h4>
+                <h4 id="profile-name" class="role"></h4>
+            </div>
+            <button class="header-button" onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <div id="mensagem" class="mensagem"></div> 
+    <div class="container">
+        <aside class="aside">
+            <ul class="aside__menu">
+                <li class="aside__menu-item"><a href="http://localhost:3000/indexAdmin" id="dashboardAs">Dashboard</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/usuarios" id="perfisEusuarioAs">Gestão de Perfis e Usuários</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/envioTaloes" id="envioAs">Gestão de Envio de Talões</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/recebimentoTaloes" id="recebimentoAs">Gestão do Recebimento</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/estoqueTaloes" id="estoqueAs">Gestão do Estoque</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/manutencaoTaloes" id="manutencaoAs">Gestão da Manutenção</a></li>
+                <li class="aside__menu-item"><a href="http://localhost:3000/lojas" id="lojaAs">Gestão de Lojas</a></li>
+            </ul>
+        </aside>
+        <div class="main-content">
+            <div class="container-table">
+                <h2>Gestão de Usuários</h2>
+                <div class="filter-container">
+                    <input type="text" id="idLoja" placeholder="ID da Loja">
+                    <input type="number" id="intervaloMin" placeholder="Mínimo" min="1" max="10">
+                    <input type="number" id="intervaloMax" placeholder="Máximo" min="1" max="10">
+                    <button onclick="aplicarFiltro()">Filtrar</button>
+                </div>
+                <table id="tabelaUsuario" border="1" cellpadding="5" cellspacing="0" class="table-scroll" >
+                    <thead>
+                        <tr>
+                            <th>Matrícula</th>
+                            <th>Nome</th>
+                            <th>Loja</th>
+                            <th>Email</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>    
+    </div>
+    <script src="../../js/app.js"></script>
+    <script src="../../js/usuario/aprovarUsuario.js"></script>
+</body>
+</html>

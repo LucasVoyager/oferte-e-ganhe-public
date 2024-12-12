@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci a senha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/iniciais.css">
+</head>
+<body>
+    <div id="mensagem" class="mensagem"></div> 
+    <div class="login-container">
+        <img src="../images/logo.png" alt="Logo" width="150">
+        <h2>Digite uma nova senha abaixo:</h2>
+        <input type="password" id="senha" name="senha" placeholder="senha" required><br><br>
+        <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="confirmar senha" required><br><br>
+        <button type="submit" onclick="salvarSenha()">Salvar nova senha</button>
+    </div>
+    <script src="../js/esqueciSenha.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+/* estilo modal global */
+
+.modal {
+    display: none; /* Ocultar modal por padrão */
+    position: fixed; /* Fixo na tela */
+    z-index: 9999; /* Garantir que fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; /* Cobrir a tela inteira */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+    display: flex; /* Centralizar o conteúdo */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+}
+
+.modal-content {
+    background-color: #fff; /* Fundo branco */
+    max-width: 300px; /* Largura máxima */
+    height: auto;
+    width: 100%; /* Responsivo */
+    padding: 20px; /* Margens internas */
+    box-sizing: border-box; /* Inclui o padding no tamanho total */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 4px;
+    color: #333; /* Cor do texto */
+}
+
+.modal-content p strong {
+    color: #4CAF50; /* Cor para o título em negrito */
+    font-weight: bold;
+}
+
+.modal-content p:last-child {
+    margin-bottom: 0; /* Remove a margem do último parágrafo */
+}
+
+/* Adicionando uma borda no fundo para separar os parágrafos */
+.modal-content p:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-content p:first-child {
+    margin-top: 0;
+}
+
+
+.close {
+    color: #aaa; /* Cor inicial */
+    font-size: 30px; /* Tamanho da fonte */
+    font-weight: bold;
+    position: relative;
+    left: 250px;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Muda a cor ao passar o mouse */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Modal Sections */
+.modal-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
+
+.modal-footer {
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.button-close {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button-close:hover {
+    background-color: #45a049; /* Verde mais escuro */
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

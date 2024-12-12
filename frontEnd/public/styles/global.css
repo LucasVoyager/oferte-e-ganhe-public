@@ -1,0 +1,90 @@
+/* reset para todas as paginas e classes globais foram utilizadas aqui */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 70px; 
+}
+
+/* MAIN CONTENT */
+.main-content {
+    padding: 30px;
+    font-family: "DM Sans", sans-serif;
+    margin-left: 250px; /* Ajusta espaço para o aside fixo */
+    box-sizing: border-box;
+    width: calc(100% - 250px); /* Reduz a largura com base na largura do aside */
+    position: relative;
+    overflow-x: auto; /* Evita que o conteúdo quebre */
+    height: auto;
+}
+
+.container-table {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto; /* Garante que tabelas grandes tenham rolagem horizontal */
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1a7a3e;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+
+.mensagem {
+    position: fixed; /* Fixa a posição na tela */
+    top: 20%; /* Coloca a mensagem um pouco acima do centro vertical */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a centralização correta */
+    padding: 10px;
+    background-color: #fff; /* Fundo branco */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    z-index: 1000; /* Garante que fique sobre outros elementos */
+    display: none; /* Inicialmente escondido */
+}
+
+.mensagem.sucesso {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.mensagem.erro {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+
+
+@media (max-width: 768px) {
+    /* Certifique-se de que o main-content tenha largura total e ajuste a margem */
+    .main-content {
+        margin-left: 0;
+        background-color: #f0f0f0;
+        width: 100%;  /* Garante que a largura ocupe 100% da tela */
+        max-width: 100%;
+        padding: 20px;  /* Adiciona um pouco de espaçamento interno */
+        box-sizing: border-box;  /* Para garantir que o padding não aumente a largura total */
+    }
+
+    /* Se o hambúrguer estiver visível, você pode precisar ajustar a visibilidade do conteúdo */
+    
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redefinição de Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #006400;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #004b23;
+        }
+        h1 {
+            color: #006400;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="cid:logo" alt="Logo" class="logo">
+        <h1 style="padding: 10px; color: #006400;">Redefinição de Senha</h1>
+        <p>Você está recebendo este email porque você (ou alguém) solicitou a redefinição da senha da sua conta.</p>
+        <p>Por favor, clique no seguinte link ou cole-o em seu navegador para concluir o processo:</p>
+        <a style="text-decoration: none;" href="http://localhost:3000/esqueciSenha?email={{email}}&token={{token}}" class="btn">Redefinir Senha</a>
+        <p>Se você não solicitou isso, ignore este email e sua senha permanecerá inalterada.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* estilo index charts */
+
+.container-chart {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 18px;
+}
+
+.chart {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 225px;
+    width: 500px;
+}
+
+@media (max-width: 768px) {
+    .container-chart {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 20px;
+    }
+    
+    .chart { 
+        width: 100%; 
+        margin: 10px; 
+    }
+
+}

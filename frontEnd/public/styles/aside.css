@@ -1,0 +1,55 @@
+/* sidebar estilo global */
+
+.aside {
+    width: 250px; /* Largura fixa */
+    position: fixed;
+    top: 70px; /* Abaixo do header */
+    left: 0;
+    height: calc(100vh - 70px); /* Preenche o restante da altura */
+    background-color: #f4f4f4; /* Cor de fundo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.aside__menu {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.aside__menu-item {
+    margin: 10px 0; /* Espaçamento entre os itens */
+}
+
+.aside__menu-item a {
+    display: block; /* Link ocupa o espaço todo */
+    padding: 10px 20px; /* Espaçamento dentro dos links */
+    color: #6c757d; /* Cor padrão do texto */
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none; /* Remove sublinhado */
+    transition: background 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+.aside__menu-item a:hover {
+    background-color: #1a7a3e; /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+    transform: translateX(5px); /* Efeito de deslocamento */
+}
+
+@media (max-width: 768px) {
+    /* Inicialmente o aside está escondido */
+    .aside {
+        display: none; /* Esconde o aside por padrão */
+        position: fixed; /* Posiciona de forma fixa na tela */
+        top: 70px; /* Coloca o aside abaixo do header (ajustando conforme a altura do seu header) */
+        left: 0;
+        width: 70%; /* Largura total */
+        z-index: 1000; /* Garantir que o aside fique acima de outros elementos */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para dar destaque */
+    }
+
+    /* Quando o aside estiver ativo (visível) */
+    .aside.active {
+        display: block; /* Exibe o aside */
+    }
+}
